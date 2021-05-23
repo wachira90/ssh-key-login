@@ -8,7 +8,7 @@ use ssh pem file login
 
 ## 1 MACHINE TO 2 
 
-### ssh ubuntu@192.168.4.42 -p 2211 "mkdir -p .ssh"
+### ssh ubuntu@192.168.4.42 -p 22 "mkdir -p .ssh"
 
 ## 2 MACHINE
 
@@ -16,10 +16,11 @@ use ssh pem file login
 
 ## 1 MACHINE
 
-### ssh ubuntu@192.168.4.42 -p 2211 "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
+### ssh ubuntu@192.168.4.42 -p 22 "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
 
 ## 1 MACHINE
-### cat .ssh/id_rsa.pub | ssh ubuntu@192.168.4.42 -p 2211 'cat >> .ssh/authorized_keys'
+
+### cat .ssh/id_rsa.pub | ssh ubuntu@192.168.4.42 -p 22 'cat >> .ssh/authorized_keys'
 
 ## CONFIG SSH  MACHINE  2
 
@@ -34,4 +35,5 @@ use ssh pem file login
 ### PasswordAuthentication no
 
 ## TEST 1 MACHINE TO 2
-### ssh ubuntu@192.168.4.42 -p 2211
+
+### ssh ubuntu@192.168.4.42 -p 22
