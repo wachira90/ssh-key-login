@@ -32,11 +32,15 @@ use ssh pem file login
 
 ## CHANGE
 
-### PasswordAuthentication yes
-
-## TO
-
 ### PasswordAuthentication no
+
+### ChallengeResponseAuthentication no
+
+### UsePAM no
+
+### PermitRootLogin no
+
+### PermitRootLogin prohibit-password
 
 ## TEST 1 MACHINE TO 2
 
