@@ -18,6 +18,10 @@ use ssh pem file login
 
 ### ssh ubuntu@192.168.4.42 -p 22 "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
 
+## IF ERROR => chmod: cannot access ‘.ssh/authorized_keys’: No such file or directory
+
+### ssh ubuntu@192.168.4.42 -p 22 "touch .ssh/authorized_keys"
+
 ## 1 MACHINE
 
 ### cat .ssh/id_rsa.pub | ssh ubuntu@192.168.4.42 -p 22 'cat >> .ssh/authorized_keys'
