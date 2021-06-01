@@ -41,3 +41,10 @@ use ssh pem file login
 ## TEST 1 MACHINE TO 2
 
 ### ssh ubuntu@192.168.4.42 -p 22
+
+## Copy key.pem to another machine
+
+### cp -rp .ssh/id_rsa key.pem
+
+### ssh -i key.pem ubuntu@192.168.4.42 -p 22
+
