@@ -2,19 +2,19 @@
 use ssh pem file login
 
 
-## 1 MACHINE
+## A MACHINE
 
 ### ssh-keygen -t rsa -b 4096 -N "" -f "$HOME"/.ssh/id_rsa
 
-## 1 MACHINE TO 2 
+## A MACHINE TO B 
 
 ### ssh ubuntu@192.168.4.42 -p 22 "mkdir -p .ssh"
 
-## 2 MACHINE
+## B MACHINE
 
 ### sudo chmod -R 700 .ssh/
 
-## 1 MACHINE
+## A MACHINE
 
 ### ssh ubuntu@192.168.4.42 -p 22 "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
 
@@ -22,11 +22,11 @@ use ssh pem file login
 
 ### ssh ubuntu@192.168.4.42 -p 22 "touch .ssh/authorized_keys"
 
-## 1 MACHINE
+## A MACHINE
 
 ### cat .ssh/id_rsa.pub | ssh ubuntu@192.168.4.42 -p 22 'cat >> .ssh/authorized_keys'
 
-## CONFIG SSH  MACHINE  2
+## CONFIG SSH  MACHINE  B
 
 ### nano /etc/ssh/sshd_config
 
@@ -42,7 +42,7 @@ use ssh pem file login
 
 ### PermitRootLogin prohibit-password
 
-## TEST 1 MACHINE TO 2
+## TEST 1 MACHINE TO B
 
 ### ssh ubuntu@192.168.4.42 -p 22
 
