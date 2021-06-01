@@ -42,7 +42,7 @@ use ssh pem file login
 
 ### PermitRootLogin prohibit-password
 
-## TEST 1 MACHINE TO B
+## TEST A MACHINE TO B
 
 ### ssh ubuntu@192.168.4.42 -p 22
 
